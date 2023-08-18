@@ -97,6 +97,9 @@ async def ForceSub(bot: Client, event: Message, file_id: str = False, mode="chec
             ],
             [
                 InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{mode}#{file_id}")
+            ],
+            [
+                InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")
             ]
         ]
         
