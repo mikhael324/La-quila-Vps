@@ -208,6 +208,8 @@ async def start(client, message):
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
+            await asyncio.sleep(10)
+            await msg.delete()
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = file.file_name
@@ -235,12 +237,14 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    await client.send_cached_media(
+    fll=await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
+    await asyncio.sleep(10)
+    await fll.delete()
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
