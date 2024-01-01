@@ -366,7 +366,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
-                )
+                    )
                 await asyncio.sleep(10)
                 await del.delete()
                 
@@ -405,7 +405,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
-        )
+            )
         await asyncio.sleep(10)
         await fel.delete()
         
